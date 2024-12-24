@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Descripción de la página" />
+    <meta name="author" content="Daniel Ariza" />
+    <meta
+      name="keywords"
+      content="palabra clave1, palabra clave2, palabra clave3"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Carta navideña</title>
+    <link
+      rel="shortcut icon"
+      href="assets/santaclaus_108480.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+    </div>
+    <main class="card">
+      <span class="estrellas1"></span>
+      <span class="estrellas2"></span>
+      <span class="estrellas3"></span>
+      <img src="/assets/santa.png" alt="" class="image" />
+
+      <h1 class="heading">Merry Christmas</h1>
+
+      <div id="inputContainer">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" id="nombre" name="nombre" />
+        <button id="enviarBtn">Enviar</button>
+      </div>
+
+      <p id="mensajePersonalizado"></p>
+    </main>
+
+    <audio autoplay loop>
+      <source
+        src="/assets/audio/christmas-melody-v1-263815.mp3"
+        type="audio/mpeg"
+      />
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+      document
+        .getElementById("enviarBtn")
+        .addEventListener("click", function () {
+          const nombre = document.getElementById("nombre").value;
+          if (nombre.trim() !== "") {
+            const mensaje = `¡Feliz Navidad, ${nombre}! ¡Te amo! ❤️`;
+            const inputContainer = document.getElementById("inputContainer");
+            inputContainer.innerHTML = `<p>${mensaje}</p>`;
+          } else {
+            alert("Por favor, ingresa tu nombre.");
+          }
+        });
+    </script>
+  </body>
+</html>
